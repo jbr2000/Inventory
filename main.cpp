@@ -4,7 +4,7 @@
 
 using namespace std;
 
-
+vector <string> listFromString(string line);
 int main()
 {
     string input;
@@ -24,3 +24,24 @@ int main()
     return 0;
 }
            
+vector <string> listFromString(string line)
+{
+   vector <string> list;     
+   string item;
+   for (int i=0; i<line.size();i++)
+   {
+           
+       if (line[i] != ',') 
+       {
+           item.append(1, line[i]);
+       }
+       else
+       {
+           list.push_back(item);
+           item="";
+       }    
+   } 
+   list.push_back(item);
+   return list;
+}   
+
